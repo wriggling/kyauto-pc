@@ -1,7 +1,6 @@
 import asyncio, time
 import requests as r
 import os
-from keep_alive import keep_alive
 import websocket
 import colorama
 from colorama import Fore, init
@@ -48,5 +47,4 @@ while True:
     }
     r = requests.post(f"https://discord.com/api/v9/channels/{channel_id}/messages", headers=headers, json=json_data)
     print(f'{Fore.RESET}[@{Fore.YELLOW}KYAUTO{Fore.RESET}] [Waiting {Fore.RED}{str(wait_time)} seconds...{Fore.RESET}] {Fore.GREEN}Sent message {Fore.RESET}> {Fore.MAGENTA}{message}{Fore.RESET}')
-    keep_alive()
     time.sleep(wait_time)
